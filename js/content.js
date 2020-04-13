@@ -9,11 +9,11 @@ document.onkeydown = event => {
 };
 
 function swapLanguages() {
-  const b = document.querySelector(".swap");
-  b.dispatchEvent(SimulatedMouseEvent('mouseover'));
-  b.dispatchEvent(SimulatedMouseEvent('mousedown'));
-  b.dispatchEvent(SimulatedMouseEvent('mouseup'));
-  b.dispatchEvent(SimulatedMouseEvent('mouseout'));
+  const swapButton = document.querySelector(".swap");
+  swapButton.dispatchEvent(SimulatedMouseEvent('mouseover'));
+  swapButton.dispatchEvent(SimulatedMouseEvent('mousedown'));
+  swapButton.dispatchEvent(SimulatedMouseEvent('mouseup'));
+  swapButton.dispatchEvent(SimulatedMouseEvent('mouseout'));
 }
 
 function SimulatedMouseEvent(name) {
