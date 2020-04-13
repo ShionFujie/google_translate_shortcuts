@@ -1,6 +1,6 @@
 {
   "name": "Google Translate Shortcuts",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Additional shortcuts for Google Translate",
   "permissions": [],
   "icons": {
@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["https://translate.google.com/*"],
-      "js": ["js/content.js", "lib/jquery-3.4.1.min.js"]
+      "js": ["js/content.js"]
     }
   ]
 }
