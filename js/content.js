@@ -7,7 +7,7 @@ document.onkeydown = event => {
     event.preventDefault();
   } else if (code == "Slash" && !shiftKey) {
     focusCapitalInput();
-    event.preventDefault()
+    event.preventDefault();
   }
 };
 
@@ -20,11 +20,9 @@ function swapLanguages() {
 }
 
 function focusCapitalInput() {
-  document.getElementById('source').focus()
+  document.getElementById("source").focus();
 }
 
-function SimulatedMouseEvent(name) {
-  const event = document.createEvent("MouseEvents");
-  event.initEvent(name, true, false);
-  return event;
+function SimulatedMouseEvent(type) {
+  return new MouseEvent(type, { bubbles: true, cancelable: false });
 }
