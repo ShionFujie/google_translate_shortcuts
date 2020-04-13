@@ -10,20 +10,14 @@ document.onkeydown = event => {
 
 function swapLanguages() {
   const b = document.querySelector(".swap");
+  b.dispatchEvent(SimulatedMouseEvent('mouseover'));
+  b.dispatchEvent(SimulatedMouseEvent('mousedown'));
+  b.dispatchEvent(SimulatedMouseEvent('mouseup'));
+  b.dispatchEvent(SimulatedMouseEvent('mouseout'));
+}
 
-  const mouseoverE = document.createEvent("MouseEvents");
-  mouseoverE.initEvent("mouseover", true, false);
-  b.dispatchEvent(mouseoverE);
-
-  const mousedonwE = document.createEvent("MouseEvents");
-  mousedonwE.initEvent("mousedown", true, false);
-  b.dispatchEvent(mousedonwE);
-
-  const mouseupE = document.createEvent("MouseEvents");
-  mouseupE.initEvent("mouseup", true, false);
-  b.dispatchEvent(mouseupE);
-
-  const mouseoutE = document.createEvent("MouseEvents");
-  mouseoutE.initEvent("mouseout", true, false);
-  b.dispatchEvent(mouseoutE);
+function SimulatedMouseEvent(name) {
+  const event = document.createEvent("MouseEvents")
+  event.initEvent(name, true,false)
+  return event
 }
