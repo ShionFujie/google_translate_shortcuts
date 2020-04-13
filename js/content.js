@@ -2,9 +2,12 @@ document.onkeydown = event => {
   if (location.pathname != "/") return;
 
   const { code, shiftKey } = event;
-  if (shiftKey && code == "Digit1") {
+  if (code == "Digit1" && shiftKey) {
     swapLanguages();
     event.preventDefault();
+  } else if (code == "Slash" && !shiftKey) {
+    focusCapitalInput();
+    event.preventDefault()
   }
 };
 
@@ -14,6 +17,10 @@ function swapLanguages() {
   swapButton.dispatchEvent(SimulatedMouseEvent("mousedown"));
   swapButton.dispatchEvent(SimulatedMouseEvent("mouseup"));
   swapButton.dispatchEvent(SimulatedMouseEvent("mouseout"));
+}
+
+function focusCapitalInput() {
+  document.getElementById('source').focus()
 }
 
 function SimulatedMouseEvent(name) {
