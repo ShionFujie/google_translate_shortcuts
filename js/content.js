@@ -8,21 +8,20 @@ document.onkeydown = event => {
   } else if (code == "Slash" && !shiftKey) {
     focusCapitalInput();
     event.preventDefault();
+  } else if (code == "Digit2" && shiftKey) {
+    listen();
+    event.preventDefault();
   }
 };
 
 function swapLanguages() {
-  const swapButton = document.querySelector(".swap");
-  swapButton.dispatchEvent(SimulatedMouseEvent("mouseover"));
-  swapButton.dispatchEvent(SimulatedMouseEvent("mousedown"));
-  swapButton.dispatchEvent(SimulatedMouseEvent("mouseup"));
-  swapButton.dispatchEvent(SimulatedMouseEvent("mouseout"));
+  emulateMouseDownUpAt(document.querySelector(".swap"));
 }
 
 function focusCapitalInput() {
   document.getElementById("source").focus();
 }
 
-function SimulatedMouseEvent(type) {
-  return new MouseEvent(type, { bubbles: true, cancelable: false });
+function listen() {
+  emulateMouseDownUpAt(document.querySelector('[aria-label="Listen"]'));
 }

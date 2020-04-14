@@ -1,6 +1,6 @@
 {
   "name": "Google Translate Shortcuts",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Additional shortcuts for Google Translate",
   "permissions": [],
   "icons": {
@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["https://translate.google.com/*"],
-      "js": ["js/content.js"]
+      "js": ["js/content.js", "js/content/emulateMouseDownUpAt.js"]
     }
   ]
 }
