@@ -8,6 +8,9 @@ document.onkeydown = event => {
   } else if (code == "Slash" && !shiftKey) {
     focusCapitalInput();
     event.preventDefault();
+  } else if (code == "Digit2" && shiftKey) {
+    listen()
+    event.preventDefault()
   }
 };
 
@@ -25,4 +28,12 @@ function focusCapitalInput() {
 
 function SimulatedMouseEvent(type) {
   return new MouseEvent(type, { bubbles: true, cancelable: false });
+}
+
+function listen() {
+  const listenButton = document.querySelector('[aria-label="Listen"]')
+  listenButton.dispatchEvent(SimulatedMouseEvent("mouseover"));
+  listenButton.dispatchEvent(SimulatedMouseEvent("mousedown"));
+  listenButton.dispatchEvent(SimulatedMouseEvent("mouseup"));
+  listenButton.dispatchEvent(SimulatedMouseEvent("mouseout"));
 }
