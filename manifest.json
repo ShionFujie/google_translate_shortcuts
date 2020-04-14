@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["https://translate.google.com/*"],
-      "js": ["js/content.js"]
+      "js": ["js/content.js", "js/content/emulateMouseDownUpAt.js"]
     }
   ]
 }
