@@ -9,8 +9,11 @@ document.onkeydown = event => {
     focusCapitalInput();
     event.preventDefault();
   } else if (code == "Digit2" && shiftKey) {
-    listen();
+    listenOriginal();
     event.preventDefault();
+  } else if (code == "Digit3" && shiftKey) {
+    listenResult()
+    event.preventDefault()
   }
 };
 
@@ -22,6 +25,10 @@ function focusCapitalInput() {
   document.getElementById("source").focus();
 }
 
-function listen() {
-  emulateMouseDownUpAt(document.querySelector('[aria-label="Listen"]'));
+function listenOriginal() {
+  emulateMouseDownUpAt(document.querySelector('.input [aria-label="Listen"]'));
+}
+
+function listenResult() {
+  emulateMouseDownUpAt(document.querySelector('.results-container [aria-label="Listen"]'));
 }
