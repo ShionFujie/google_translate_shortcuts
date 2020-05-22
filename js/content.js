@@ -9,7 +9,7 @@ document.onkeydown = event => {
     focusCapitalInput();
     event.preventDefault();
   } else if (code == "Digit2" && shiftKey) {
-    listen();
+    listenOriginal();
     event.preventDefault();
   } else if (code == "Digit3" && shiftKey) {
     listenResult()
@@ -25,7 +25,7 @@ function focusCapitalInput() {
   document.getElementById("source").focus();
 }
 
-function listen() {
+function listenOriginal() {
   emulateMouseDownUpAt(document.querySelector('.input [aria-label="Listen"]'));
 }
 
