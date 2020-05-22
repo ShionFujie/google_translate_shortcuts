@@ -11,6 +11,9 @@ document.onkeydown = event => {
   } else if (code == "Digit2" && shiftKey) {
     listen();
     event.preventDefault();
+  } else if (code == "Digit3" && shiftKey) {
+    listenResult()
+    event.preventDefault()
   }
 };
 
@@ -23,5 +26,9 @@ function focusCapitalInput() {
 }
 
 function listen() {
-  emulateMouseDownUpAt(document.querySelector('[aria-label="Listen"]'));
+  emulateMouseDownUpAt(document.querySelector('.input [aria-label="Listen"]'));
+}
+
+function listenResult() {
+
 }
