@@ -30,5 +30,5 @@ function listen() {
 }
 
 function listenResult() {
-
+  emulateMouseDownUpAt(document.querySelector('.results-container [aria-label="Listen"]'));
 }
